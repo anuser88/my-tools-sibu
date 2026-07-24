@@ -15,7 +15,6 @@
 
     button.textContent = "Add to studios";
     button.id = "SIBU";
-
     button.onclick = async function () {
         const SIBU = document.getElementById("SIBU");
         const SiBu = window.location.href.match(/\/projects\/(\d+)/);
@@ -37,8 +36,28 @@
                 "mode": "cors",
                 "credentials": "include"
             }).then(x => x.json());
-            console.log(sibu.user.token);
-            function haha(studio) {
+            const Sibu = await fetch(`https://api.scratch.mit.edu/users/${sibu.user.username}/studios/curate`, {
+                "headers": {
+                    "accept": "*/*",
+                    "accept-language": "en, en;q=0.8",
+                    "x-requested-with": "XMLHttpRequest"
+                },
+                "body": null,
+                "method": "GET",
+                "mode": "cors"
+            }).then(x => x.json());
+            async function haha(studio) {
+                await fetch(`https://api.scratch.mit.edu/studios/${studio}/project/${SiBu[1]}`, {
+                    "headers": {
+                        "accept": "*/*",
+                        "accept-language": "en, en;q=0.8",
+                        "x-token": sibu.user.token
+                    },
+                    "body": null,
+                    "method": "DELETE",
+                    "mode": "cors",
+                    "credentials": "omit"
+                });
                 fetch(`https://api.scratch.mit.edu/studios/${studio}/project/${SiBu[1]}`, {
                     "headers": {
                         "accept": "*/*",
@@ -57,11 +76,12 @@
                     await sleep(200);
                 }
             }
-            await hehe([ //free studios
+            let siBu = [ //free studios
                 "51658230",
                 "51048635",
                 "247962",
                 "9088764",
+                "51808329",
                 "26908329",
                 "51557258",
                 "51822784",
@@ -84,7 +104,6 @@
                 "51821201",
                 "51808329",
                 "51743064",
-                "51815834",
                 "51760507",
                 "51783742",
                 "51670557",
@@ -147,7 +166,10 @@
                 "51735145",
                 "51672631",
                 "56"
-            ]);
+            ];
+            siBu = [...siBu, ...Sibu.map(x => x.id)];
+            siBu = [...new Set(siBu)];
+            await hehe(siBu);
             SIBU.textContent = "Done!";
         } else {
             console.log("This page is not a valid project.");
@@ -158,4 +180,4 @@
 
     document.getElementById("navigation").append(button);
     button.click();
-}()
+}();
