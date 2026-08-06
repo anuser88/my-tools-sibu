@@ -69,11 +69,11 @@
                     "mode": "cors",
                     "credentials": "omit"
                 });
+				await sleep(300);
             }
             async function hehe(studios) {
                 for (const studio of studios) {
-                    haha(studio);
-                    await sleep(200);
+                    await haha(studio);
                 }
             }
             let siBu = [ //free studios
@@ -165,7 +165,8 @@
                 "51787179",
                 "51735145",
                 "51672631",
-                "56"
+                "56",
+				"154"
             ];
             siBu = [...siBu, ...Sibu.map(x => x.id)];
             siBu = [...new Set(siBu)];
