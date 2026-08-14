@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         sibu
 // @namespace    http://tampermonkey.net/
-// @version      2026-08-06
-// @description  RIP studio
-// @author       You
+// @version      2026-08-14
+// @description  RIP studios (push ur prjs on top of studios)
+// @author       Ezx6t
 // @match        https://scratch.mit.edu/projects/*
 // @icon         https://scratch.mit.edu/favicon.ico
 // @grant        none
@@ -69,7 +69,7 @@
                     "mode": "cors",
                     "credentials": "omit"
                 });
-				await sleep(300);
+				await sleep(500);
             }
             async function hehe(studios) {
                 for (const studio of studios) {
