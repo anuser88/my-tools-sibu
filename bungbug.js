@@ -33,10 +33,12 @@
     try {
       const bubu = await daily(acc);
       if (bubu.error) throw new Error(bubu.error);
+      wow = bubu.newBalance;
     }
     catch (e) {
       console.warn(e);
     }
+    if (wow === 0) return;
     try {
       const bubu = await tip(acc, wow);
       if (bubu.error) throw new Error(bubu.error);
