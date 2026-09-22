@@ -26,7 +26,7 @@
     });
     i++;
     i%=targets.length;
-    await sleep(400);
+    await sleep(150);
   }
 }();
-// javascript:!async function(){const e=(await fetch("https://raw.githubusercontent.com/anuser88/my-tools-sibu/master/targets.txt").then(e=>e.text())).split(/\r?\n/).filter(Boolean);let t=0;for(;;)await s();async function s(){const s=JSON.parse(localStorage.getItem("danv_user"));var n;s?.username&&(fetch("https://app.studiodanv.workers.dev/api/project/action",{headers:{"x-client-type":"StudioDANV-Web"},body:JSON.stringify({fileId:e[t],action:"add_view",username:s.username,sessionToken:s.sessionToken}),method:"POST",credentials:"omit"}),t++,t%=e.length,await(n=400,new Promise(e=>setTimeout(e,n))))}}();
+// javascript:!async function(){const e=(await fetch("https://raw.githubusercontent.com/anuser88/my-tools-sibu/master/targets.txt").then(e=>e.text())).split(/\r?\n/).filter(Boolean);let t=0;for(;;)await s();async function s(){const s=JSON.parse(localStorage.getItem("danv_user"));var n;s?.username&&(fetch("https://app.studiodanv.workers.dev/api/project/action",{headers:{"x-client-type":"StudioDANV-Web"},body:JSON.stringify({fileId:e[t],action:"add_view",username:s.username,sessionToken:s.sessionToken}),method:"POST",credentials:"omit"}),t++,t%=e.length,await(n=150,new Promise(e=>setTimeout(e,n))))}}();
