@@ -11,7 +11,7 @@
       },
       "referrer": "https://turbows.pages.dev/",
       "referrerPolicy": "strict-origin-when-cross-origin",
-      "body": JSON.stringify({username, password: pw}),
+      "body": JSON.stringify({loginId: username, password: pw}),
       "method": "POST",
       "mode": "cors",
       "credentials": "omit"
