@@ -33,4 +33,4 @@
       "credentials": "omit"
     });
   }
-}
+}();
