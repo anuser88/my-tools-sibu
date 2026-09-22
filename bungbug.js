@@ -1,6 +1,6 @@
 !async function() {
   const accounts = [];
-  accounts.foreach((sime)=>bb(sime[0],sime[1]));
+  accounts.forEach((sime)=>bb(sime[0],sime[1]));
   async function login(username, pw) {
     return await fetch("https://app.studiodanv.workers.dev/api/auth/login", {
       "headers": {
